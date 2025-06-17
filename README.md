@@ -38,12 +38,13 @@ It helps users visualize key financial metrics like **balance**, **expenses**, *
 ## Screenshots
 
 ### 💻 Full Dashboard View  
-![Dashboard Overview](./screenshots/dashboard-overview.png)
+![Dashboard Overview](./screenshots/dashboard-overview.PNG)
 
-![Cards Section](./screenshots/cards-section.png)
+### Cards
+![Cards Section](./screenshots/cards-section.PNG)
 
 ### 📈 Bar and Pie Charts  
-![Charts Section](./screenshots/charts-section.png)
+![Charts Section](./screenshots/charts-section.PNG)
 ---
 
 ## How to Run Locally
