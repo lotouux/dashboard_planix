@@ -1,0 +1,283 @@
+/* ============================================================
+    VARIÁVEIS GLOBAIS
+============================================================ */
+:root {
+    /* Cores principais */
+    --cor-fundo: #f8f9fa;
+    --cor-texto-principal: #333;
+    --cor-sidebar: #f0f3f4;
+    --cor-borda-suave: #dee2e6;
+    --cor-link-hover: #d1f2eb;
+    --cor-destaque: #17a589;
+    --cor-branco: #ffffff;
+    --sombra-padrao: 0 8px 20px rgba(0, 0, 0, 0.06);
+
+    /* Gradientes para os cards principais */
+    --gradiente-card-1: linear-gradient(135deg, #4db6ac, #26a69a);
+    --gradiente-card-2: linear-gradient(135deg, #26a69a, #22978c);
+    --gradiente-card-3: linear-gradient(135deg, #22978c, #218a7f);
+    --gradiente-card-4: linear-gradient(135deg, #218a7f, #1e7c73);
+}
+
+/* ============================================================
+    LAYOUT GERAL
+============================================================ */
+body {
+    background-color: var(--cor-fundo);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2,
+h5 {
+    color: var(--cor-texto-principal);
+}
+
+.main-container {
+    background-color: var(--cor-branco);
+    border-radius: 12px;
+    box-shadow: var(--sombra-padrao);
+    overflow: hidden;
+    max-width: 1200px;
+    margin: 40px auto;
+    min-height: 85vh;
+    padding: 30px;
+}
+
+/* ============================================================
+    SIDEBAR (MENU LATERAL)
+============================================================ */
+.sidebar {
+    background-color: var(--cor-sidebar);
+    width: 220px;
+    min-height: 100vh;
+    padding-top: 20px;
+    border-right: 1px solid var(--cor-borda-suave);
+}
+
+.sidebar .logo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Navegação dentro da Sidebar */
+.nav-link {
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: var(--cor-texto-principal);
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    transform: translateX(4px);
+    background-color: var(--cor-link-hover);
+    color: var(--cor-destaque);
+    font-weight: 600;
+}
+
+/* ============================================================
+    ÍCONE DE PERFIL (Topo ou Sidebar)
+============================================================ */
+.profile-icon {
+    background-color: var(--cor-destaque);
+    color: var(--cor-branco);
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: filter 0.3s;
+}
+
+.profile-icon:hover {
+    filter: brightness(1.15);
+}
+
+/* ============================================================
+    CARDS DE RESUMO (Saldo, Despesas, Lucros, Metas)
+============================================================ */
+.custom-card {
+    background: linear-gradient(135deg, #6c757d, #5a6268);
+    /* Fundo padrão cinza */
+    border-radius: 16px;
+    box-shadow: var(--sombra-padrao);
+    color: var(--cor-branco);
+    padding: 20px;
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.custom-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Cores específicas de cada tipo de card */
+.custom-card.card-saldo {
+    background: var(--gradiente-card-1);
+}
+
+.custom-card.card-despesas {
+    background: var(--gradiente-card-2);
+}
+
+.custom-card.card-lucros {
+    background: var(--gradiente-card-3);
+}
+
+.custom-card.card-metas {
+    background: var(--gradiente-card-4);
+}
+
+/* Icones dentro dos cards */
+.icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    font-size: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-right: 12px;
+}
+
+/* ============================================================
+    CARD DE STATUS / MOTIVACIONAL (Ex: Alertas, Mensagens de Sucesso ou Alerta)
+============================================================ */
+.status-card {
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 16px;
+    color: var(--cor-branco);
+    gap: 2rem;
+}
+
+.status-card-illustration {
+    flex: 0 0 180px;
+}
+
+.status-card-illustration img {
+    max-width: 100%;
+}
+
+.status-card-content h4 {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.status-card-content p {
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+.status-card-checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.status-card-checklist li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.status-card-checklist .bi {
+    margin-right: 0.75rem;
+    font-size: 1.2rem;
+}
+
+/* Cores para diferentes estados do card */
+.status-card.is-positive {
+    background-color: #26a69a;
+    /* Estado positivo (verde-água) */
+}
+
+.status-card.is-positive .bi {
+    color: #a7ffeb;
+}
+
+.status-card.is-negative {
+    background-color: #ff7043;
+    /* Estado negativo (laranja) */
+}
+
+.status-card.is-negative .bi {
+    color: #ffccbc;
+}
+
+/* ============================================================
+    TABELAS
+============================================================ */
+.table {
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: var(--cor-branco);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.table thead {
+    background-color: var(--cor-sidebar);
+}
+
+.table td,
+.table th {
+    vertical-align: middle;
+}
+
+/* ============================================================
+    GRÁFICOS - PLACEHOLDERS (Exemplos)
+============================================================ */
+
+/* Gráfico de Barras */
+.grafico-barras-placeholder {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 150px;
+    width: 100%;
+    border-left: 2px solid #eee;
+    border-bottom: 2px solid #eee;
+    padding-top: 10px;
+}
+
+.grafico-barras-placeholder .barra {
+    width: 10%;
+    background: var(--gradiente-card-3);
+    border-radius: 4px 4px 0 0;
+}
+
+/* Gráfico de Pizza */
+.grafico-pizza-placeholder {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-top: 10px;
+    background: conic-gradient(
+        #4db6ac 0% 40%,
+        #26a69a 40% 75%,
+        #218a7f 75% 100%
+    );
+}
+
+
+/* ============================================================
+    MEDIA QUERIES (Responsividade)
+============================================================ */
+@media (min-width: 992px) {
+    .sidebar.offcanvas {
+        position: static;
+        transform: none;
+        visibility: visible !important;
+        width: 220px;
+        border-right: 1px solid var(--cor-borda-suave);
+    }
+
+    .sidebar .offcanvas-header {
+        display: none;
+    }
+}
